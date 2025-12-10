@@ -10,7 +10,11 @@ export default function Form (){
   
    const handleSubmit=(e)=>{
       e.preventDefault();
-      setFullname(`${firstname} ${lastname}`);
+      if(firstname && lastname){ 
+         setFullname(`${firstname} ${lastname}`);}
+      else{
+
+      }
       }
 
    return( 
@@ -21,18 +25,18 @@ export default function Form (){
    First Name: <input type="text" 
    placeholder="Enter First_name"
    onChange={(e)=>setFirstname(e.target.value)}
-   value={firstname}/>
+   value={firstname} required/>
    <br/>
 
    Last Name: <input type="text" 
    placeholder="Enter Last_name"
    onChange={(e)=>setLastname(e.target.value)}
-   value={lastname}/> 
+   value={lastname} required/> 
    <br/>
 
    <button type={"submit"}>Submit</button>
    </form>
-   {fullname&&(<h1 style={{fontFamily:"-apple-system"}}>Full Name:{fullname}</h1>)} 
+   {firstname && lastname &&(<h1 style={{fontFamily:"-apple-system"}}>Full Name:{fullname}</h1>)} 
    </> );
 
 }
