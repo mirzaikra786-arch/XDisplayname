@@ -5,14 +5,15 @@ export default function Form (){
  const [lastname, setLastname]=useState("")    
  const [fullname, setFullname]=useState("")
 
- const nameRegex = /^[a-zA-Z\s]+$/;
+const specialCharRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~`]/;
+const hasDigit = /\d/;
 
 const handleSubmit=(e)=>{
       e.preventDefault();
-      if(nameRegex.test(firstname) && nameRegex.test(lastname)){ 
+  if(!(specialCharRegex.test(firstname)) && !(specialCharRegex.test(lastname)) && !(hasDigit.test(firstname)) && !(hasDigit.test(lastname))){ 
          setFullname(`${firstname} ${lastname}`);}
       else{
-                 
+        alert("Names can not have number or special symbols!")         
       }
       }
 
