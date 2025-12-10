@@ -5,12 +5,14 @@ export default function Form (){
  const [lastname, setLastname]=useState("")    
  const [fullname, setFullname]=useState("")
 
+ const nameRegex = /^[a-zA-Z\s]+$/;
+
 const handleSubmit=(e)=>{
       e.preventDefault();
-      if(typeof(firstname)==='string' && typeof(lastname)==='string'){ 
+      if(nameRegex.test(firstname) && nameRegex.test(lastname)){ 
          setFullname(`${firstname} ${lastname}`);}
       else{
-
+                 
       }
       }
 
