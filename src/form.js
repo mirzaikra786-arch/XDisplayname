@@ -13,7 +13,7 @@ const handleSubmit=(e)=>{
   if(!(specialCharRegex.test(firstname)) && !(specialCharRegex.test(lastname)) && !(hasDigit.test(firstname)) && !(hasDigit.test(lastname))){ 
          setFullname(`${firstname} ${lastname}`);}
       else{
-        alert("Names can not have number or special symbols!")         
+        console.error("Names can not have number or special symbols!")         
       }
       }
 
