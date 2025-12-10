@@ -1,4 +1,3 @@
-
 import React,{ useState} from "react";
 
 export default function Form (){
@@ -6,11 +5,9 @@ export default function Form (){
  const [lastname, setLastname]=useState("")    
  const [fullname, setFullname]=useState("")
 
-  
-  
-   const handleSubmit=(e)=>{
+const handleSubmit=(e)=>{
       e.preventDefault();
-      if(firstname && lastname){ 
+      if(typeof(firstname)==='string' && typeof(lastname)==='string'){ 
          setFullname(`${firstname} ${lastname}`);}
       else{
 
