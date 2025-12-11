@@ -41,7 +41,7 @@ const handleSubmit=(e)=>{
 
    <button type={"submit"}>Submit</button>
    </form>
-   {show &&(<h1 style={{fontFamily:"-apple-system"}}>Full Name:{fullname}</h1>)} 
+   {show &&(<h1 style={{fontFamily:"-apple-system"}}>Full Name: {fullname}</h1>)} 
    </> );
 
 }
