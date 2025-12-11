@@ -9,6 +9,7 @@ export default function Form (){
 //const specialCharRegex = /^[a-zA-Z]{4,}(?: [a-zA-Z]+){0,2}$/;
 //const hasDigit = /\d/;
 const Regex=/^[a-zA-Z]{3,}( {1,2}[a-zA-Z]{3,}){0,}$/
+//this function will handle the form submission
 const handleSubmit=(e)=>{
       e.preventDefault();
       if (!(firstname==="" && lastname==="")) {
