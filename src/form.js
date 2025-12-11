@@ -8,18 +8,23 @@ export default function Form (){
 
 //const specialCharRegex = /^[a-zA-Z]{4,}(?: [a-zA-Z]+){0,2}$/;
 //const hasDigit = /\d/;
-const Regex=/^[a-zA-Z]{3,}( {1,2}[a-zA-Z]{3,}){0,}$/
+//const Regex=/^[a-zA-Z]{3,}( {1,2}[a-zA-Z]{3,}){0,}$/
 //this function will handle the form submission
 const handleSubmit=(e)=>{
       e.preventDefault();
-      if (!(firstname==="" && lastname==="")) {
-         setShow(true)}
-  if(((Regex.test(firstname)) && Regex.test(lastname))) { 
-         setFullname(`${firstname} ${lastname}`);}
+      if ((firstname==="" || lastname==="") ) {
+          setShow(false)
+          setFullname("")
+   }
+  //if(((Regex.test(firstname)) && Regex.test(lastname))) { 
+   //      setFullname(`${firstname} ${lastname}`);}
       else{
-         setShow(false)
-        console.error("Names can not have number or special symbols!")         
+        setFullname(`${firstname} ${lastname}`)
+           setShow(true)
+     
+      //  console.error("Names can not have number or special symbols!")         
       }
+
       }
 
    return( 
@@ -38,10 +43,11 @@ const handleSubmit=(e)=>{
    onChange={(e)=>setLastname(e.target.value)}
    value={lastname} required/> 
    <br/>
-
-   <button type={"submit"}>Submit</button>
-   </form>
-   {show &&(<h1 style={{fontFamily:"-apple-system"}}>Full Name: {fullname}</h1>)} 
+   
+    <button type={"submit"}>Submit</button>
+     </form>
+  {show && <h1 style={{fontFamily:"-apple-system"}}>Full Name: {fullname}</h1>}
+  
    </> );
 
 }
